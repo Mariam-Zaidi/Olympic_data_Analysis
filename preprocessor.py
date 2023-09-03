@@ -1,8 +1,20 @@
 import pandas as pd
 
-df_region = pd.read_csv("noc_regions.csv")
+import streamlit as st
+@st.cache
+def load_noc_regions(nrows):
+    data = pd.read_csv("noc_regions.csv")
+    return data
 
-df_main = pd.read_csv("athlete_events.csv")
+@st.cache
+def load_athlete_events(nrows):
+    data = pd.read_csv("athlete_events.csv")
+    return data
+
+
+df_region = load_noc_regions(230)
+
+df_main = load_athlete_events(271116)
 
 def preprocess():
     global df_region,df_main
