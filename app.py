@@ -6,6 +6,21 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.figure_factory as ff
 
+@st.cache
+def load_noc_regions(nrows):
+    data = pd.read_csv("noc_regions.csv")
+    return data
+
+@st.cache
+def load_athlete_events(nrows):
+    data = pd.read_csv("athlete_events.csv")
+    return data
+
+
+df_region = load_noc_regions(230)
+
+df_main = load_athlete_events(271116)
+
 df_merge = preprocessor.preprocess()
 st.sidebar.title("Olympics Analysis (1896 - 2016)")
 user_menu = st.sidebar.radio(
