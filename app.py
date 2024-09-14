@@ -1,4 +1,5 @@
-pip install --upgrade numpy
+pip install --force-reinstall numpy pandas scikit-learn opencv-python
+conda update numpy pandas scikit-learn opencv
 import streamlit as st
 import pandas as pd
 import preprocessor, helper
