@@ -1,6 +1,5 @@
-pip uninstall numpy
-pip uninstall pandas scikit-learn opencv-python
-pip install numpy pandas scikit-learn opencv-python
+pip install numpy==1.19.5
+
 import streamlit as st
 import pandas as pd
 import preprocessor, helper
